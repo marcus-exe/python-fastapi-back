@@ -1,1 +1,4 @@
 venv/
+ai/best.pt
+input/
+runs/
