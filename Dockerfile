@@ -1,10 +1,13 @@
 # Use an official Python runtime as the base image
-FROM python:3.11-slim
+FROM docker.io/python:3.11-slim
 
 # Install dependencies for OpenCV (including libGL.so.1)
-RUN apt-get update && apt-get install -y \
-    libglib2.0-0 libgthread-2.0-0
-    
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install\
+    libgl1\
+    libgl1-mesa-glx \ 
+    libglib2.0-0 -y && \
+    rm -rf /var/lib/apt/lists/*
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -15,7 +18,11 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of your application code to the container
-COPY . .
+COPY ./main.py /app/main.py
+COPY ./utils/my_module.py /app/utils/my_module.py
+COPY ./utils/__init__.py /app/utils/__init__.py
+COPY ./utils/best.pt /app/utils/best.pt
+
 
 # Expose the port your application runs on (if needed)
 EXPOSE 8000
