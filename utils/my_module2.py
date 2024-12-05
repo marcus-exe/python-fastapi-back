@@ -75,7 +75,7 @@ def ai_api2(image_path, model_path):
     # cv2.destroyAllWindows()  # Fecha todas as janelas abertas
 
 
-image_path = "/mnt/c/Users/marcu/Downloads/TCC/python-fastapi-back/utils/input/uploaded_image_20241127_115419.jpeg"
-model_path = "/mnt/c/Users/marcu/Downloads/TCC/python-fastapi-back/utils/best.pt"
+# image_path = "/mnt/c/Users/marcu/Downloads/TCC/python-fastapi-back/utils/input/uploaded_image_20241127_115419.jpeg"
+# model_path = "/mnt/c/Users/marcu/Downloads/TCC/python-fastapi-back/utils/best.pt"
 
-ai_api2(image_path, model_path)
+# ai_api2(image_path, model_path)

@@ -13,7 +13,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./main.py /app/main.py
-COPY ./utils/my_module.py /app/utils/my_module.py
+COPY ./utils/my_module2.py /app/utils/my_module2.py
 COPY ./utils/__init__.py /app/utils/__init__.py
 COPY ./utils/best.pt /app/utils/best.pt
 
